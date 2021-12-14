@@ -2,6 +2,7 @@
   "name": "webpack-june",
   "version": "1.0.0",
   "license": "MIT",
+  "author": "Christopher Miller",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
