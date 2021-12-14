@@ -19,6 +19,7 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
         node-version: 14
         cache: 'yarn'
+        scope: '@christopherjmiller'
     - name: Get Version
       id: get_version
       run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
