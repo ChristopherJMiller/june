@@ -5,7 +5,8 @@ name: Publish Package
 
 on:
   push:
-    branches: [ main ]
+    tags:
+      - v*.*.*
 
 jobs:
   publish:
@@ -18,8 +19,11 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
         node-version: 14
         cache: 'yarn'
+    - name: Get Version
+      id: get_version
+      run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
     - run: yarn install
     - run: yarn build
-    - run: yarn publish
+    - run: yarn publish --access public --new-version ${{ steps.get_version.outputs.VERSION }}
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
