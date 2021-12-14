@@ -1,8 +1,14 @@
 {
   "name": "webpack-june",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "license": "MIT",
-  "author": "Christopher Miller",
+  "author": {
+    "name": "Christopher Miller",
+    "email": "cmiller548@gmail.com"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
